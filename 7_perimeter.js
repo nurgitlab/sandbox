@@ -18,8 +18,8 @@ for (let i = 1; i < matrix.length + 1; i++) {
 }
 
 for (let i = 0; i < newMatrix.length; i++) {
-  newMatrix[0] = newMatrix[0] + p;
-  newMatrix[matrix.length + 1] = newMatrix[matrix.length + 1] + p;
+  newMatrix[0] += p;
+  newMatrix[matrix.length + 1] += p;
 }
 
 for (let i = 1; i < newMatrix.length - 1; i++) {
