@@ -12,19 +12,17 @@ function add(a, b) {
 
   let mem = 0;
 
-  for (let i = 0; i < minArray.length; i++) {
-    if ((maxArray[i] + minArray[i] + mem) > 9) {
-      maxArray[i] += minArray[i] - 10 + mem;
+  for (let i = minArray.length; i < maxArray.length; i++) {
+    minArray.push(0);
+  }
+
+  for (let i = 0; i < maxArray.length; i++) {
+    maxArray[i] = maxArray[i] + minArray[i] + mem;
+    if (maxArray[i] > 9) {
+      maxArray[i] = maxArray[i] % 10;
       mem = 1;
     } else {
-      maxArray[i] += minArray[i] + mem;
-      if (maxArray[i] > 9) {
-        maxArray[i] = maxArray - 10;
-        mem = 1;
-      } else {
-        mem = 0;
-      }
-
+      mem = 0;
     }
   }
 
@@ -35,4 +33,4 @@ function add(a, b) {
   return maxArray.reverse().join("");
 }
 
-console.log(add("11", "99"));
+console.log(add("1", "9999"));
