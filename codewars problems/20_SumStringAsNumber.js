@@ -1,4 +1,25 @@
-function add(a, b) {
+function sumStrings(a, b) {
+  let aCheck = true;
+  a = a.split("").map((letter) => {
+    if (aCheck && letter == "0") {
+      return "";
+    } else {
+      aCheck = false;
+      return letter;
+    }
+  }).join("");
+
+  let bCheck = true;
+  b = b.split("").map((letter) => {
+    if (bCheck && letter == "0") {
+      return "";
+    } else {
+      bCheck = false;
+      return letter;
+    }
+  }).join("");
+
+  //Block from 18 problem
   let max, min;
   if (a.length > b.length) {
     max = a;
@@ -33,4 +54,4 @@ function add(a, b) {
   return maxArray.reverse().join("");
 }
 
-console.log(add("", "9999"));
+console.log(sumStrings('004', '000532'));
