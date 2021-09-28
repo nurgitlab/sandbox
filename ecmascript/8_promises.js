@@ -8,11 +8,11 @@ const delay = ms => new Promise(((resolve, reject) => {
   setTimeout(() => reject(`Done ${ms}`), ms);
 }));
 
-// delay(1000)
-//     .then(data => (delay(500))
-//     .then(data => console.log(data))
-//     .catch(err => console.log(err))
-//     .finally(()=>console.log("finally")))
+delay(1000)
+    .then(data => (delay(500))
+    .then(data => console.log(data))
+    .catch(err => console.log(err))
+    .finally(()=>console.log("finally")))
 
 async function asyncDelay() {
   try {
