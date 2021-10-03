@@ -1,59 +1,33 @@
 import React, { Component } from "react";
-
+import "./stylesNew.css";
+import Fcomponent from "./Fcomponent";
+import Fncomponent from "./Fncomponent";
 
 export default class Ccomponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: "",
-      items: []
+      inputValue: ""
     };
-    this.handleChange = this.handleChange.bind(this);
-    this.buttonPush = this.buttonPush.bind(this);
+    this.handleChange = this.handleChange.bind(this)
   }
-
-  handleChange(event) {
+  handleChange(event){
     this.setState({
-      input: event.target.value
-    });
+      inputValue: event.target.value
+    })
   }
 
-  buttonPush(event) {
-    event.preventDefault();//обработчик отправки
-    this.setState({
-      input: this.state.input,
-      items: [...this.state.items, this.state.input],
-    });
-    this.setState({
-      input: "",
-    });
-  }
-
-  render() {
-    return (
-      <div>
-        <form onSubmit={this.buttonPush}>
-          <input
-            value={this.state.input}
-            onChange={this.handleChange}/>
-
-          <button
-            type={"output"}
-          >
-            Push
-          </button>
-        </form>
-
-        <ul>
-          {this.state.items.map((item, index) => {
-            return (
-              <p>
-                <li key={item}>{item}</li>
-              </p>
-            );
-          })}
-        </ul>
-      </div>
-    );
-  }
+    render(){
+      return (
+        <div>
+          <Fcomponent
+            input={this.state.inputValue}
+            handleChange={this.handleChange}
+          />
+          <Fncomponent
+            input={this.state.inputValue}
+          />
+        </div>
+      );
+    }
 }
