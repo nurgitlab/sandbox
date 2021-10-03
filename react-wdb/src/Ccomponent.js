@@ -5,38 +5,55 @@ export default class Ccomponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      counter: 0
+      input: "",
+      items: []
     };
-
-    this.plusClick = this.plusClick.bind(this);
-    this.minusClick = this.minusClick.bind(this);
-    this.resetClick = this.resetClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.buttonPush = this.buttonPush.bind(this);
   }
 
-  plusClick() {
-    this.setState(state => ({
-      counter: state.counter + 1
-    }));
+  handleChange(event) {
+    this.setState({
+      input: event.target.value
+    });
   }
-  minusClick() {
-    this.setState(state => ({
-      counter: state.counter - 1
-    }));
-  }
-  resetClick() {
-    this.setState(state => ({
-      counter: 0
-    }));
+
+  buttonPush(event) {
+    event.preventDefault();//обработчик отправки
+    this.setState({
+      input: this.state.input,
+      items: [...this.state.items, this.state.input],
+    });
+    this.setState({
+      input: "",
+    });
   }
 
   render() {
-      return (
-        <div>
-          <h2>Counter = {this.state.counter}</h2>
-          <button onClick={this.plusClick}>+</button>
-          <button onClick={this.minusClick}>-</button>
-          <button onClick={this.resetClick}>Reset</button>
-        </div>
-      );
+    return (
+      <div>
+        <form onSubmit={this.buttonPush}>
+          <input
+            value={this.state.input}
+            onChange={this.handleChange}/>
+
+          <button
+            type={"output"}
+          >
+            Push
+          </button>
+        </form>
+
+        <ul>
+          {this.state.items.map((item, index) => {
+            return (
+              <p>
+                <li key={item}>{item}</li>
+              </p>
+            );
+          })}
+        </ul>
+      </div>
+    );
   }
 }
