@@ -1,7 +1,11 @@
 import React from "react"
 
 const MyList = () => {
-  const [words,changeWords] = React.useState(["Lion","Puma"])
+  const [words,changeWords] = React.useState([
+    "Lion",
+    "Puma",
+    "Messi"
+  ])
 
   const [inputWord,change] = React.useState("")
 
