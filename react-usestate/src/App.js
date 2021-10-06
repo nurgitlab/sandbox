@@ -5,7 +5,7 @@ import Summator from "./modules/Summator";
 function App() {
   return (
     <div>
-      <Summator />
+      <MyList/>
     </div>
   );
 }
