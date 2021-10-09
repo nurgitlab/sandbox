@@ -1,9 +1,12 @@
 import React from "react";
 import axios from "axios";
 import { PERSON_API } from "./consts";
+import { useHistory } from "react-router";
 
 
 export const CreatePerson = () => {
+  const history = useHistory()
+
   const [fromInput, setFromInput] = React.useState("");
   const [list, setList] = React.useState([]);
 
@@ -18,8 +21,10 @@ export const CreatePerson = () => {
   const sendToServer = () => {
     axios.post(PERSON_API,{list})
       .then(send=>{
-        console.log(send)
+        //window.location.reload()
+        history.push("/")
       })
+
   }
 
   return (

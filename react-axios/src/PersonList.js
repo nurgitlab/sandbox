@@ -1,11 +1,13 @@
 import React from "react";
 import axios from "axios";
 import { PERSON_API } from "./consts";
+import { useHistory } from "react-router";
 
 
 export const PersonList = () => {
-  const [persons, setPersons] = React.useState([]);
+  const history = useHistory()
 
+  const [persons, setPersons] = React.useState([]);
 
   const filesfromGit = () => {
     axios.get(PERSON_API)
@@ -15,14 +17,15 @@ export const PersonList = () => {
       .catch(e => {
         console.error(e.message);
       });
-    // try {
-    //   const response = await
-    //     axios.get(PERSON_API);
-    //   setData(response.data);
-    // } catch (e) {
-    //   setData(e.message);
-    // }
   };
+
+  const openPerson = (id) => {
+    history.push(`/user/${id}`)
+  }
+
+  const goToNext = () => {
+    history.push(`/new`)
+  }
 
   React.useEffect(() => {
     filesfromGit();
@@ -30,11 +33,15 @@ export const PersonList = () => {
   // console.log(infoFromJson)
   return (
     <div>
+      <button onClick={goToNext}>NEW -></button>
       <div>
         <ul>
           {persons.map((obj, index) => {
             return (
-              <li key={index}>{obj?._id}</li>
+              <li
+                key={index}
+                onClick={()=>openPerson(obj._id)}
+              >{obj?._id}</li>
             );
           })}
         </ul>
