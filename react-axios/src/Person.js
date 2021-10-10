@@ -8,6 +8,10 @@ export const Person = ({userId}) => {
   const history = useHistory();
 
   const [person, setPerson] = React.useState(null);
+  const [changePerson, setChangePerson] = React.useState({
+    name: "",
+    age: "",
+  });
 
   React.useEffect(() => {
     axios.get(`${PERSON_API}/${userId}`)
@@ -26,6 +30,23 @@ export const Person = ({userId}) => {
         history.push("/");
       });
   };
+
+  const onUpdate = () => {
+    axios.put(`${PERSON_API}/${userId}`, {
+      name: changePerson.name,
+      age: changePerson.age,
+    }).then(() => {
+      history.push("/");
+    });
+  };
+
+  const onName = (e) => {
+    setChangePerson({...changePerson, name: e.target.value});
+  };
+
+  const onAge = (e) => {
+    setChangePerson({...changePerson, age: e.target.value});
+  };
   // console.log(infoFromJson)
   return (
     <div>
@@ -36,9 +57,11 @@ export const Person = ({userId}) => {
           <button onClick={onDelete}>DELETE</button>
 
           <div>
-          UserInfo
-            <input defaultValue={person.name}/>
-            <input defaultValue={person.age}/>
+            UserInfo
+            <input defaultValue={person.name} onChange={e => onName(e)}/>
+            <input defaultValue={person.age} onChange={e => onAge(e)}/>
+
+            <button onClick={onUpdate}>UPDATE INFO</button>
           </div>
 
         </div>
