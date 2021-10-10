@@ -5,7 +5,7 @@ import { useHistory } from "react-router";
 
 
 export const Person = ({userId}) => {
-  const history = useHistory()
+  const history = useHistory();
 
   const [person, setPerson] = React.useState(null);
 
@@ -18,13 +18,12 @@ export const Person = ({userId}) => {
         console.error(e.message);
       });
   }, []);
-  console.log(person);
+
 
   const onDelete = () => {
     axios.delete(`${PERSON_API}/${userId}`)
       .then(res => {
-        console.log(res);
-        history.push("/")
+        history.push("/");
       });
   };
   // console.log(infoFromJson)
@@ -32,8 +31,16 @@ export const Person = ({userId}) => {
     <div>
       {person && (
         <div>
+          {console.log(person)}
           UserInfo
           <button onClick={onDelete}>DELETE</button>
+
+          <div>
+          UserInfo
+            <input defaultValue={person.name}/>
+            <input defaultValue={person.age}/>
+          </div>
+
         </div>
       )}
     </div>

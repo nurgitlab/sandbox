@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { PERSON_API } from "./consts";
 import { useHistory } from "react-router";
+import { ClearAllPersons } from "./ClearAllPersons";
 
 
 export const PersonList = () => {
@@ -9,7 +10,8 @@ export const PersonList = () => {
 
   const [persons, setPersons] = React.useState([]);
 
-  const filesfromGit = () => {
+  const fetchPersons = () => {
+    console.log("SSH FETCH IN SSH")
     axios.get(PERSON_API)
       .then(response => {
         setPersons(response.data)
@@ -17,7 +19,12 @@ export const PersonList = () => {
       .catch(e => {
         console.error(e.message);
       });
-  };
+  }
+
+  React.useEffect(() => {
+    fetchPersons()
+  }, []);
+
 
   const openPerson = (id) => {
     history.push(`/user/${id}`)
@@ -27,9 +34,7 @@ export const PersonList = () => {
     history.push(`/new`)
   }
 
-  React.useEffect(() => {
-    filesfromGit();
-  }, []);
+
   // console.log(infoFromJson)
   return (
     <div>
@@ -46,6 +51,9 @@ export const PersonList = () => {
           })}
         </ul>
       </div>
+
+      <ClearAllPersons persons={persons} updatePersons={fetchPersons}/>
+
     </div>
   );
 };

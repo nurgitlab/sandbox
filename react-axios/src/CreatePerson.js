@@ -5,21 +5,32 @@ import { useHistory } from "react-router";
 
 
 export const CreatePerson = () => {
-  const history = useHistory()
+  const history = useHistory();
 
-  const [fromInput, setFromInput] = React.useState("");
-  const [list, setList] = React.useState([]);
+  const [newPerson, setNewPerson] = React.useState({
+    name: "",
+    age: "",
+  });
 
-  const inputFunc = (e) => {
-    setFromInput(e.target.value);
+
+  const inputName = (e) => {
+    setNewPerson({
+      ...newPerson,
+      name: e.target.value,
+    });
   };
 
-  const sendFunc = () => {
-    setList([...list, fromInput]);
+  const inputAge = (e) => {
+    setNewPerson({
+      ...newPerson,
+      age: e.target.value,
+    });
   };
 
-  const sendToServer = () => {
-    axios.post(PERSON_API,{list})
+
+
+  const createPerson = () => {
+    axios.post(PERSON_API,{...newPerson})
       .then(send=>{
         //window.location.reload()
         history.push("/")
@@ -29,27 +40,14 @@ export const CreatePerson = () => {
 
   return (
     <div>
-      ____________________
+
       <div>
-        <input onChange={e => inputFunc(e)}/>
-        <button onClick={sendFunc}>Send</button>
-        {fromInput}
+        <input onChange={e => inputName(e)} value={newPerson.name ? newPerson.name : ""}/>
+        <input onChange={e => inputAge(e)} value={newPerson.age ? newPerson.age: ""}/>
       </div>
-      <div>
-        <button onClick={sendToServer}>-> On server</button>
-      </div>
-      <div>
-        <ul>
-          {list.map((item, index) => {
-            return (
-              <li key={index}>
-                {item}
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-      ____________________
+
+      <button onClick={createPerson}>CREATE PERSON</button>
+
     </div>
   );
 };
