@@ -4,10 +4,7 @@ import { PERSON_API } from "./consts";
 import { useHistory } from "react-router";
 
 
-export const ClearAllPersons = ({
-  persons,
-  updatePersons,
-}) => {
+export const ClearAllPersons = ({persons, updatePersons,}) => {
   const history = useHistory()
 
   const deleteFunc = () =>{
