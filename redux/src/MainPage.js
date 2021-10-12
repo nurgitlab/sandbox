@@ -3,7 +3,7 @@ import { useHistory } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 
 
-export const MainPage = () => {
+export const MainPage = ({counter}) => {
   const history = useHistory();
 
   const goToNormalCounter = () => {
@@ -30,8 +30,10 @@ export const MainPage = () => {
       </button>
       <br/>
       THIS IS MAIN PAGE {count}
-      <br />
+      <br/>
       <button onClick={reset}>RESET REDUX COUNTER</button>
+      <br/>
+      THIS IS STATE COUNTER {counter}
     </div>
   );
 };

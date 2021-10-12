@@ -2,9 +2,12 @@ import React from "react";
 import { useHistory } from "react-router";
 
 
-export const NormalCounter = () => {
+export const NormalCounter = ({
+                                counter,
+                                setCounter,
+}) => {
   const history = useHistory();
-  const [counter, setCounter] = React.useState(0);
+  // const [counter, setCounter] = React.useState(0);
 
   const plus = () => {
     setCounter(counter + 1);
