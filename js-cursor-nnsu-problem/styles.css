@@ -1,0 +1,29 @@
+.header{
+    font-size: 36px;
+    text-align: center;
+}
+
+.mainInfo{
+    width: 50%;
+    margin: 50px 25% 50px 25%;
+    font-size: 24px;
+}
+
+.picture {
+    width: 50%;
+    margin: 0 25% 0 25%;
+    border: 5px solid darkblue;
+    position: center;
+    min-height: 200px;
+    min-width: 200px;
+    background-image: url("https://res.cloudinary.com/practicaldev/image/fetch/s--QA2lS2_E--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/r6zclhzspu5333ln1su8.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    border-radius: 20px;
+}
+
+body{
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background-image: url("https://interyerus.ru/f/product/pre_LS7006.jpg");
+}
