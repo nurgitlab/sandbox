@@ -45,8 +45,10 @@ export const PersonList = () => {
             return (
               <li
                 key={index}
-                onClick={()=>openPerson(obj._id)}
-              >{obj?._id}</li>
+                onClick={() => openPerson(obj._id)}
+              >
+                {obj?._id}
+              </li>
             );
           })}
         </ul>

@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "axios": "^0.22.0",
-    "react-router-dom": "^5.3.0"
+    "react-router-dom": "^5.3.0",
+    "uuid": "^8.3.2"
   }
 }
