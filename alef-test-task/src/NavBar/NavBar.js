@@ -16,21 +16,13 @@ export const NavBar = () => {
   };
 
   return (
-    <div
-      className={"navbar"}
-    >
-      <div
-        className={"logo"}
-      >
-        <img
-          height={"40px"}
-          src={Logo}
-        />
-      </div>
-      <div
-        className={"nav-buttons"}
-      >
+    <div className={"navbar"}>
 
+      <div className={"logo"}>
+        <img height={"40px"} src={Logo}/>
+      </div>
+
+      <div className={"nav-buttons"}>
         <div
           className={"nav-button"}
           onClick={() => formClick()}
@@ -43,11 +35,7 @@ export const NavBar = () => {
         >
           Превью
         </div>
-        <div>
-
-        </div>
       </div>
-
     </div>
   );
 };

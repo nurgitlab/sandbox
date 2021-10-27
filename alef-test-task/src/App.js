@@ -15,14 +15,10 @@ export const App = () => {
 
   return (
     <div>
-      <Provider
-        store={store}
-      >
+      <Provider store={store}>
         <BrowserRouter>
-          <NavBar />
-          <div
-            className={"main-block"}
-          >
+          <NavBar/>
+          <div className={"main-block"}>
             <Switch>
               <Route
                 path={"/"}

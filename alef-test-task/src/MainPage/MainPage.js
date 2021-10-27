@@ -73,110 +73,78 @@ export const MainPage = () => {
 
   return (
     <div>
-      <div
-        className={"title"}
-      >
+      <div className={"title"}>
         Персональные данные
       </div>
 
-      <div
-        className={"container"}
-      >
-        <div
-          className={"label"}
-        >
+      <div className={"container"}>
+        <div className={"label"}>
           Фамилия
         </div>
         <input
           className={"input-style"}
           name={"surname"}
-          onChange={e => inputUsersInfo(e)}
+          onChange={inputUsersInfo}
           defaultValue={userStorage.surname}
         />
       </div>
 
-      <div
-        className={"container"}
-      >
-        <div
-          className={"label"}
-        >
+      <div className={"container"}>
+        <div className={"label"}>
           Имя
         </div>
         <input
           className={"input-style"}
           name={"name"}
-          onChange={e => inputUsersInfo(e)}
+          onChange={inputUsersInfo}
           defaultValue={userStorage.name}
         />
       </div>
 
-      <div
-        className={"container"}
-      >
-        <div
-          className={"label"}
-        >
+      <div className={"container"}>
+        <div className={"label"}>
           Отчество
         </div>
         <input
           className={"input-style"}
           name={"patronymic"}
-          onChange={e => inputUsersInfo(e)}
+          onChange={inputUsersInfo}
           defaultValue={userStorage.patronymic}
         />
       </div>
 
-      <div
-        className={"container"}
-      >
-        <div
-          className={"label"}
-        >
+      <div className={"container"}>
+        <div className={"label"}>
           Возраст
         </div>
         <input
           className={"input-style"}
           name={"age"}
           type={"number"}
-          onChange={e => inputUsersInfo(e)}
+          onChange={inputUsersInfo}
           defaultValue={userStorage.age}
         />
       </div>
 
-      <div
-        className={"title-down"}
-      >
-        <div
-          className={"title-kid"}
-        >
+      <div className={"title-down"}>
+        <div className={"title-kid"}>
           Дети (макс. 5)
         </div>
 
-        <div
-          className={"title-button"}
-        >
-          {kids.length < 5 ? (
+        <div className={"title-button"}>
+          {kids.length < 5 && (
             <div
               className={"king-button"}
               onClick={addKid}
             >
-              <div
-                className={"plus"}
-              >
+              <div className={"plus"}>
                 +
               </div>
-              <div
-                className={"add-kid"}
-              >
+              <div className={"add-kid"}>
                 Добавить ребёнка
               </div>
             </div>
-          ) : (
-            <div>
-            </div>
-          )
-          }
+          )}
         </div>
       </div>
 
@@ -187,18 +155,10 @@ export const MainPage = () => {
               className={"all-kid-info"}
               key={kid.id}
             >
-              <div
-                className={"input-kid-info"}
-              >
-                <div
-                  className={"show-kids"}
-                >
-                  <div
-                    className={"container"}
-                  >
-                    <div
-                      className={"label"}
-                    >
+              <div className={"input-kid-info"}>
+                <div className={"show-kids"}>
+                  <div className={"container"}>
+                    <div className={"label"}>
                       Имя
                     </div>
                     <input
@@ -210,15 +170,9 @@ export const MainPage = () => {
                   </div>
                 </div>
 
-                <div
-                  className={"show-kids"}
-                >
-                  <div
-                    className={"container"}
-                  >
-                    <div
-                      className={"label"}
-                    >
+                <div className={"show-kids"}>
+                  <div className={"container"}>
+                    <div className={"label"}>
                       Возраст
                     </div>
                     <input
@@ -249,7 +203,6 @@ export const MainPage = () => {
       >
         Сохранить
       </div>
-
     </div>
   );
 };

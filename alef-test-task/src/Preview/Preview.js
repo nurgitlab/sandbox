@@ -8,32 +8,24 @@ export const Preview = () => {
 
   return (
     <div>
-      <div
-        className={"title"}
-      >
+      <div className={"title"}>
         Персональные данные
       </div>
 
       {(user.name !== "" && user.age !== null) ? (
-        <div
-          className={"show-users-info"}
-        >
+        <div className={"show-users-info"}>
           {`${user.name}, ${user.age} лет`}
         </div>
       ) : (
-        <div
-          className={"error"}
-        >
+        <div className={"error"}>
           Вы не полностью ввели данные о себе!
         </div>
       )}
 
-      <div
-        className={"kid-title"}
-      >
+      <div className={"kid-title"}>
         Дети
       </div>
-      <br/>
+
       <div>
         {kids.map(kid => {
           return (
@@ -41,9 +33,7 @@ export const Preview = () => {
               key={kid.id}
               className={"kid-block"}
             >
-              <div
-                className={"show-kid-info"}
-              >
+              <div className={"show-kid-info"}>
                 {(kid.name !== "" && kid.age !== "") ? (
                   <div>
                     {`${kid.name}, ${kid.age} лет`}
