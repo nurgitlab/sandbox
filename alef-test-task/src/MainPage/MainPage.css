@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,400&display=swap');
+
+
+.title {
+    font-weight: 500;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #111111;
+}
+
+.label {
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    color: rgba(17, 17, 17, 0.48);
+}
+
+.container {
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    background: #FFFFFF;
+    border: 1px solid #F1F1F1;
+    border-radius: 4px;
+}
+
+.input-style {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    background: transparent;
+    outline: none;
+
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #111111;
+}
+
+.king-button{
+    width: 204px;
+    height: 44px;
+    top: 305px;
+    left: 787px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 20px;
+
+
+    border-radius: 100px;
+    border: 2px #01A7FD solid;
+    box-sizing: border-box;
+}
+
+.plus {
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    color: #01A7FD;
+    font-size: 24px;
+    font-weight: 900;
+
+
+    align-items: center;
+    text-align: center;
+}
+
+.add-kid{
+    padding-left: 10px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+
+
+    align-items: center;
+    text-align: center;
+
+    color: #01A7FD;
+}
+
+.title-down{
+    display: flex;
+    flex-direction: row;
+}
+
+.title-button{
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}

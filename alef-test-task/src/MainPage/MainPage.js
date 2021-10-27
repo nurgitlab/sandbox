@@ -2,7 +2,7 @@ import React from "react";
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
-
+import "./MainPage.css";
 
 export const MainPage = () => {
   const history = useHistory();
@@ -73,82 +73,171 @@ export const MainPage = () => {
     <div>
       This is mane Page
       <br/>
-      <input
-        name={"name"}
-        onChange={e => inputUsersInfo(e)}
-        defaultValue={userStorage.name}
-      />
-      <br/>
-      <input
-        name={"surname"}
-        onChange={e => inputUsersInfo(e)}
-        defaultValue={userStorage.surname}
-      />
-      <br/>
-      <input
-        name={"patronymic"}
-        onChange={e => inputUsersInfo(e)}
-        defaultValue={userStorage.patronymic}
-      />
-      <br/>
-      <input
-        name={"age"}
-        type={"number"}
-        onChange={e => inputUsersInfo(e)}
-        defaultValue={userStorage.age}
-      />
+
+      <div
+        className={"title"}
+      >
+        Персональные данные
+      </div>
+
+
+      <div
+        className={"container"}
+      >
+        <div
+          className={"label"}
+        >
+          Фамилия
+        </div>
+        <input
+          className={"input-style"}
+          name={"surname"}
+          onChange={e => inputUsersInfo(e)}
+          defaultValue={userStorage.surname}
+        />
+      </div>
+
+      <div
+        className={"container"}
+      >
+        <div
+          className={"label"}
+        >
+          Имя
+        </div>
+        <input
+          className={"input-style"}
+          name={"name"}
+          onChange={e => inputUsersInfo(e)}
+          defaultValue={userStorage.name}
+        />
+      </div>
+
+      <div
+        className={"container"}
+      >
+        <div
+          className={"label"}
+        >
+          Отчество
+        </div>
+        <input
+          className={"input-style"}
+          name={"patronymic"}
+          onChange={e => inputUsersInfo(e)}
+          defaultValue={userStorage.patronymic}
+        />
+      </div>
+
+      <div
+        className={"container"}
+      >
+        <div
+          className={"label"}
+        >
+          Возраст
+        </div>
+        <input
+          className={"input-style"}
+          name={"age"}
+          type={"number"}
+          onChange={e => inputUsersInfo(e)}
+          defaultValue={userStorage.age}
+        />
+      </div>
+
       <br/>
       <button
         onClick={saveToRedux}
       >
         SAVE
       </button>
-      <br/>
-      Дети (макс 5)
+
+      <div
+        className={"title-down"}
+      >
+        <div
+          className={"title"}
+        >
+          Дети (макс. 5)
+        </div>
+
+        <div
+          className={"title-button"}
+        >
+          {kids.length < 5 ? (
+            <div
+              className={"king-button"}
+              onClick={addKid}
+            >
+              <div
+                className={"plus"}
+              >
+                +
+              </div>
+              <div
+                className={"add-kid"}
+              >
+                Добавить ребёнка
+              </div>
+            </div>
+          ) : (
+            <div>
+            </div>
+          )
+          }
+        </div>
+      </div>
       <br/>
 
-      {kids.length < 5 ? (
-        <div>
-          <button
-            onClick={addKid}
-          >
-            ADD KID
-          </button>
-        </div>
-      ) : (
-        <div>
-          OOPS)
-        </div>
-      )
-      }
-      <br/>
-
-      <ul>
+      <div>
         {kids.map((kid) => {
           return (
-            <li
+            <div
               key={kid.id}
             >
-              <input
-                name={"name"}
-                onChange={e => inputKidsInfo(e, kid.id)}
-                defaultValue={kid.name}
-              />
-              <input
-                name={"age"}
-                type={"number"}
-                onChange={e => inputKidsInfo(e, kid.id)}
-                defaultValue={kid.age}
-              />
+              <div
+                className={"container"}
+              >
+                <div
+                  className={"label"}
+                >
+                  Имя
+                </div>
+                <input
+                  className={"input-style"}
+                  name={"name"}
+                  onChange={e => inputKidsInfo(e, kid.id)}
+                  defaultValue={kid.name}
+                />
+              </div>
+
+              <div
+                className={"container"}
+              >
+                <div
+                  className={"label"}
+                >
+                  Возраст
+                </div>
+                <input
+                  className={"input-style"}
+                  name={"age"}
+                  type={"number"}
+                  onChange={e => inputKidsInfo(e, kid.id)}
+                  defaultValue={kid.age}
+                />
+              </div>
+
               <button
                 onClick={() => removeKid(kid.id)}
               >
                 DELETE
               </button>
-            </li>
+            </div>
           );
         })}
-      </ul>
+      </div>
 
     </div>
   );
