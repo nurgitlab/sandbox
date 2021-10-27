@@ -3,6 +3,7 @@ import { Preview } from "./Preview/Preview";
 import { MainPage } from "./MainPage/MainPage";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
+import { NavBar } from "./NavBar/NavBar";
 
 
 export const App = () => {
@@ -34,6 +35,7 @@ export const App = () => {
         store={store}
       >
         <BrowserRouter>
+          <NavBar />
           <Switch>
             <Route
               path={"/"}

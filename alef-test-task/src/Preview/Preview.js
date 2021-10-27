@@ -1,32 +1,41 @@
 import { useSelector } from "react-redux";
-
+import "./Preview.css"
 
 export const Preview = () => {
   let user = useSelector(state => state.user);
   let kids = useSelector(state => state.kids);
   return (
     <div>
-      This is preview page
-      <br/>
-      Персональные данные
-      <br/>
+      <div
+        className={"title"}
+      >
+        Персональные данные
+      </div>
+      <div
+        className={"show-users-info"}
+      >
+        {`${user.name}, ${user.age} лет`}
+      </div>
       <div>
-        <span>{`${user.name}, ${user.age} лет`}</span>
+        Дети
       </div>
       <br/>
-      Дети
-      <br/>
-      <ul>
+      <div>
         {kids.map(kid => {
           return (
-            <li
+            <div
               key={kid.id}
+              className={"kid-block"}
             >
-              {`${kid.name}, ${kid.age} лет`}
-            </li>
+              <div
+                className={"show-kid-info"}
+              >
+                {`${kid.name}, ${kid.age} лет`}
+              </div>
+            </div>
           );
         })}
-      </ul>
+      </div>
 
     </div>
   )

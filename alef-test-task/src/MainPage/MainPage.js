@@ -71,9 +71,6 @@ export const MainPage = () => {
 
   return (
     <div>
-      This is mane Page
-      <br/>
-
       <div
         className={"title"}
       >
@@ -146,12 +143,7 @@ export const MainPage = () => {
         />
       </div>
 
-      <br/>
-      <button
-        onClick={saveToRedux}
-      >
-        SAVE
-      </button>
+
 
       <div
         className={"title-down"}
@@ -188,55 +180,76 @@ export const MainPage = () => {
           }
         </div>
       </div>
-      <br/>
 
       <div>
         {kids.map((kid) => {
           return (
             <div
+              className={"all-kid-info"}
               key={kid.id}
             >
               <div
-                className={"container"}
+                className={"input-kid-info"}
               >
                 <div
-                  className={"label"}
+                  className={"show-kids"}
                 >
-                  Имя
+                  <div
+                    className={"container"}
+                  >
+                    <div
+                      className={"label"}
+                    >
+                      Имя
+                    </div>
+                    <input
+                      className={"input-style"}
+                      name={"name"}
+                      onChange={e => inputKidsInfo(e, kid.id)}
+                      defaultValue={kid.name}
+                    />
+                  </div>
                 </div>
-                <input
-                  className={"input-style"}
-                  name={"name"}
-                  onChange={e => inputKidsInfo(e, kid.id)}
-                  defaultValue={kid.name}
-                />
+
+                <div
+                  className={"show-kids"}
+                >
+                  <div
+                    className={"container"}
+                  >
+                    <div
+                      className={"label"}
+                    >
+                      Возраст
+                    </div>
+                    <input
+                      className={"input-style"}
+                      name={"age"}
+                      type={"number"}
+                      onChange={e => inputKidsInfo(e, kid.id)}
+                      defaultValue={kid.age}
+                    />
+                  </div>
+                </div>
               </div>
 
               <div
-                className={"container"}
-              >
-                <div
-                  className={"label"}
-                >
-                  Возраст
-                </div>
-                <input
-                  className={"input-style"}
-                  name={"age"}
-                  type={"number"}
-                  onChange={e => inputKidsInfo(e, kid.id)}
-                  defaultValue={kid.age}
-                />
-              </div>
-
-              <button
+                className={"delete-button"}
                 onClick={() => removeKid(kid.id)}
               >
-                DELETE
-              </button>
+                Удалить
+              </div>
             </div>
           );
         })}
+      </div>
+
+
+      <div
+        className={"save-button"}
+        onClick={saveToRedux}
+      >
+        Сохранить
       </div>
 
     </div>

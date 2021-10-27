@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,400&display=swap');
+
+* {
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.navbar {
+    height: 76px;
+}
+
+.nav-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.nav-button {
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(17, 17, 17, 0.48);
+    margin: 5px 10px;
+}

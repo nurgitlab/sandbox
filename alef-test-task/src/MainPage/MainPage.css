@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,400&display=swap');
-
+*{
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+}
 
 .title {
     font-weight: 500;
-    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
     font-style: normal;
     font-size: 16px;
     line-height: 24px;
@@ -11,7 +13,6 @@
 }
 
 .label {
-    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 13px;
@@ -29,16 +30,15 @@
     background: #FFFFFF;
     border: 1px solid #F1F1F1;
     border-radius: 4px;
+    margin-bottom: 10px;
 }
 
 .input-style {
     width: 100%;
-    box-sizing: border-box;
+
     border: none;
     background: transparent;
     outline: none;
-
-    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -53,25 +53,19 @@
     height: 44px;
     top: 305px;
     left: 787px;
-
     display: flex;
     flex-direction: row;
     align-items: center;
     padding: 10px 20px;
-
-
     border-radius: 100px;
     border: 2px #01A7FD solid;
-    box-sizing: border-box;
+
 }
 
 .plus {
-    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
     color: #01A7FD;
     font-size: 24px;
     font-weight: 900;
-
-
     align-items: center;
     text-align: center;
 }
@@ -83,21 +77,72 @@
     font-weight: normal;
     font-size: 14px;
     line-height: 24px;
-
-
     align-items: center;
     text-align: center;
-
     color: #01A7FD;
 }
 
 .title-down{
     display: flex;
     flex-direction: row;
+    height: 50px;
 }
 
 .title-button{
     display: flex;
     flex: 1;
     justify-content: flex-end;
+}
+
+.show-kids {
+    width: 50%;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.delete-button {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: normal;
+    display: flex;
+    justify-content: flex-end;
+    color: #01A7FD;
+    align-items: center;
+    padding-bottom: 10px;
+
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.all-kid-info {
+    display: flex;
+    flex-direction: row;
+}
+
+.input-kid-info {
+    display: flex;
+    width: 100%;
+}
+
+.save-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+
+    width: 118px;
+    height: 44px;
+    left: 375px;
+    top: 512px;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+
+    color: #FFFFFF;
+    background: #01A7FD;
+    border-radius: 100px;
 }
