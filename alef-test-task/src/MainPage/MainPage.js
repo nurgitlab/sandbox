@@ -144,12 +144,11 @@ export const MainPage = () => {
       </div>
 
 
-
       <div
         className={"title-down"}
       >
         <div
-          className={"title"}
+          className={"title-kid"}
         >
           Дети (макс. 5)
         </div>
