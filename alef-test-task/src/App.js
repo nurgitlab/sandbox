@@ -1,27 +1,56 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Preview } from "./Preview/Preview";
 import { MainPage } from "./MainPage/MainPage";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+
 
 export const App = () => {
+  const defaultState = {
+    user: {
+      name: "",
+      surname: "",
+      patronymic: "",
+      age: null,
+    },
+    kids: [],
+  };
+  const reducer = (state = defaultState, action) => {
+    if (action.type === "ADD_TO_REDUX") {
+      return {
+        ...state,
+        user: action.usersInfo,
+        kids: action.kidsInfo,
+      };
+    } else {
+      return state;
+    }
+  };
+
+  const store = createStore(reducer);
   return (
     <div>
-      <BrowserRouter>
-        <Switch>
-          <Route
-            path={"/"}
-            exact={true}
-          >
-            <MainPage/>
-          </Route>
+      <Provider
+        store={store}
+      >
+        <BrowserRouter>
+          <Switch>
+            <Route
+              path={"/"}
+              exact={true}
+            >
+              <MainPage/>
+            </Route>
 
-          <Route
-            path={"/preview"}
-            exact={true}
-          >
-            <Preview/>
-          </Route>
-        </Switch>
-      </BrowserRouter>
+            <Route
+              path={"/preview"}
+              exact={true}
+            >
+              <Preview/>
+            </Route>
+          </Switch>
+        </BrowserRouter>
+      </Provider>
     </div>
   );
 };
