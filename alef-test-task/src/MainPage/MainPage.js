@@ -2,7 +2,10 @@ import React from "react";
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
+
 import "./MainPage.css";
+import { ADD_TO_REDUX } from "../reducer/actions";
+
 
 export const MainPage = () => {
   const history = useHistory();
@@ -60,14 +63,13 @@ export const MainPage = () => {
 
   const saveToRedux = () => {
     dispatch({
-        type: "ADD_TO_REDUX",
+        type: ADD_TO_REDUX,
         usersInfo: usersInfo,
         kidsInfo: kids,
       }
     );
     history.push("/preview");
   };
-
 
   return (
     <div>
@@ -76,7 +78,6 @@ export const MainPage = () => {
       >
         Персональные данные
       </div>
-
 
       <div
         className={"container"}
@@ -142,7 +143,6 @@ export const MainPage = () => {
           defaultValue={userStorage.age}
         />
       </div>
-
 
       <div
         className={"title-down"}
@@ -242,7 +242,6 @@ export const MainPage = () => {
           );
         })}
       </div>
-
 
       <div
         className={"save-button"}

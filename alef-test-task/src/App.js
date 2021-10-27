@@ -3,34 +3,16 @@ import { Preview } from "./Preview/Preview";
 import { MainPage } from "./MainPage/MainPage";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
+
 import { NavBar } from "./NavBar/NavBar";
 import "./App.css"
 import { DownBar } from "./DownBar/DownBar";
+import { reducer } from "./reducer/reducer";
 
 
 export const App = () => {
-  const defaultState = {
-    user: {
-      name: "",
-      surname: "",
-      patronymic: "",
-      age: null,
-    },
-    kids: [],
-  };
-  const reducer = (state = defaultState, action) => {
-    if (action.type === "ADD_TO_REDUX") {
-      return {
-        ...state,
-        user: action.usersInfo,
-        kids: action.kidsInfo,
-      };
-    } else {
-      return state;
-    }
-  };
-
   const store = createStore(reducer);
+
   return (
     <div>
       <Provider

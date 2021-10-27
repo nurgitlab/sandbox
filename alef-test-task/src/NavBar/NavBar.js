@@ -1,15 +1,20 @@
-import "./NavBar.css";
 import { useHistory } from "react-router";
+
 import Logo from "./logo.png"
+import "./NavBar.css";
+
 
 export const NavBar = () => {
   const history = useHistory();
+
   const formClick = () => {
     history.push("/");
   };
+
   const previewClick = () => {
     history.push("/preview");
   };
+
   return (
     <div
       className={"navbar"}

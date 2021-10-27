@@ -9,7 +9,7 @@ export const DownBar = () => {
       <div
         className={"downbar-text"}
       >
-        all rigts reserved
+        all rights reserved
       </div>
     </div>
   )
