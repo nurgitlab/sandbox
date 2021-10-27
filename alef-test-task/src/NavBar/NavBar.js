@@ -1,5 +1,6 @@
 import "./NavBar.css";
 import { useHistory } from "react-router";
+import Logo from "./logo.png"
 
 export const NavBar = () => {
   const history = useHistory();
@@ -14,8 +15,17 @@ export const NavBar = () => {
       className={"navbar"}
     >
       <div
+        className={"logo"}
+      >
+        <img
+          height={"40px"}
+          src={Logo}
+        />
+      </div>
+      <div
         className={"nav-buttons"}
       >
+
         <div
           className={"nav-button"}
           onClick={() => formClick()}
@@ -28,7 +38,11 @@ export const NavBar = () => {
         >
           Превью
         </div>
+        <div>
+
+        </div>
       </div>
+
     </div>
   );
 };

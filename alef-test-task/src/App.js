@@ -4,6 +4,8 @@ import { MainPage } from "./MainPage/MainPage";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import { NavBar } from "./NavBar/NavBar";
+import "./App.css"
+import { DownBar } from "./DownBar/DownBar";
 
 
 export const App = () => {
@@ -36,21 +38,26 @@ export const App = () => {
       >
         <BrowserRouter>
           <NavBar />
-          <Switch>
-            <Route
-              path={"/"}
-              exact={true}
-            >
-              <MainPage/>
-            </Route>
+          <div
+            className={"main-block"}
+          >
+            <Switch>
+              <Route
+                path={"/"}
+                exact={true}
+              >
+                <MainPage/>
+              </Route>
 
-            <Route
-              path={"/preview"}
-              exact={true}
-            >
-              <Preview/>
-            </Route>
-          </Switch>
+              <Route
+                path={"/preview"}
+                exact={true}
+              >
+                <Preview/>
+              </Route>
+            </Switch>
+          </div>
+          <DownBar />
         </BrowserRouter>
       </Provider>
     </div>
