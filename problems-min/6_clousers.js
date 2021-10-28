@@ -28,12 +28,14 @@
 // manager.print()
 
 
-const someNumbers = [1, 2, 3, 4, 5, 6, 7];
+// const someNumbers = [1, 2, 3, 4, 5, 6, 7];
+//
+// for (var i = 0; i < someNumbers.length; i++) {
+//   (function (j) {
+//     setTimeout(function () {
+//       console.log(someNumbers[j])
+//     },2000)
+//   })(i)
+// }
 
-for (var i = 0; i < someNumbers.length; i++) {
-  (function (j) {
-    setTimeout(function () {
-      console.log(someNumbers[j])
-    },2000)
-  })(i)
-}
+
