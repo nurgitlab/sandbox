@@ -1,9 +1,13 @@
 import React from 'react';
+import {Card} from "./Card/Card";
 
-export const App: React.FC = () => {
+
+export const App = () => {
   return (
     <div>
-      Hello, TS
+        <Card width={"200px"} height={"400px"}>
+            <button>Push me</button>
+        </Card>
     </div>
   );
 }
