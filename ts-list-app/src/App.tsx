@@ -69,7 +69,7 @@ export const App = () => {
                         />
                 }
             />
-            <EventsExample />
+            <EventsExample/>
         </div>
     );
 }
