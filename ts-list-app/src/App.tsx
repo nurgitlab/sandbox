@@ -1,75 +1,53 @@
-import React, {useState} from 'react';
-import {Card, CardVariant} from "./Card/Card";
-import {UserList} from "./UserList/UserList";
-import {ITodo, IUser} from "./types/types";
-import axios from "axios";
-import List from "./List/List";
-import {UserItem} from "./UserItem/UserItem";
-import {TodoItem} from "./TodoItem/TodoItem";
-import {EventsExample} from "./EventsExample/EventsExample";
+import React from 'react';
+import {BrowserRouter, NavLink, Route} from "react-router-dom";
+import {UsersPage} from "./UsersPage/UsersPage";
+import {TodosPage} from "./TodosPage/TodosPage";
+import {UserItemPage} from "./UserItemPage/UserItemPage";
 
 
 export const App = () => {
-    const [users, setUsers] = useState<IUser[]>([])
-    const [todos, setTodos] = useState<ITodo[]>([])
-
-    React.useEffect(() => {
-        fetchUsers()
-        fetchTodos()
-    }, [])
-
-    async function fetchUsers() {
-        try {
-            const response = await axios.get<IUser[]>("https://jsonplaceholder.typicode.com/users")
-            setUsers(response.data)
-        } catch (e) {
-            alert(e)
-        }
-    }
-
-
-    async function fetchTodos() {
-        try {
-            const response = await axios.get<ITodo[]>("https://jsonplaceholder.typicode.com/todos?_limit=10")
-            setTodos(response.data)
-        } catch (e) {
-            alert(e)
-        }
-    }
 
     return (
-        <div>
-            <Card
-                width={"200px"}
-                height={"400px"}
-                variant={CardVariant.outlined}
-                onClick={(num) => console.log("PUSHED", num)}
-            >
-                <button>
-                    Push me
-                </button>
-            </Card>
-            <List
-                items={users}
-                renderItem={
-                    (user: IUser) =>
-                        <UserItem
-                            user={user}
-                            key={user.id}
-                        />
-                }
-            />
-            <List
-                items={todos}
-                renderItem={
-                    (todo: ITodo) =>
-                        <TodoItem
-                            todo={todo}
-                            key={todo.id}
-                        />
-                }
-            />
-            <EventsExample/>
-        </div>
+        <BrowserRouter>
+            <div>
+                <div>
+                    <NavLink to="/users">Users</NavLink>
+                    <NavLink to="/todos">Todos list</NavLink>
+                </div>
+                <Route path={"/users"} exact>
+                    <UsersPage/>
+                </Route>
+
+                <Route path={"/todos"} exact>
+                    <TodosPage/>
+                </Route>
+
+                <Route path={"/user/:id"}>
+                    <UserItemPage/>
+                </Route>
+
+                <Route path={"/todos/:id"}>
+                    <TodosPage/>
+                </Route>
+            </div>
+        </BrowserRouter>
     );
+
+    // return (
+    //     <div>
+    //         <Card
+    //             width={"200px"}
+    //             height={"400px"}
+    //             variant={CardVariant.outlined}
+    //             onClick={(num) => console.log("PUSHED", num)}
+    //         >
+    //             <button>
+    //                 Push me
+    //             </button>
+    //         </Card>
+    //
+    //
+    //         <EventsExample/>
+    //     </div>
+    // );
 }
