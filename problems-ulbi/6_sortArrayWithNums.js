@@ -10,7 +10,7 @@ let input = [1, 228, 28, 2, 34, 435, 47, 423];
 //
 // console.log(answer)
 
-let answer = input.forEach(element=>console.log(element))
+let answer = input.forEach(element => console.log(element));
 
-console.log(answer)
-console.log(input)
+console.log(answer);
+console.log(input);

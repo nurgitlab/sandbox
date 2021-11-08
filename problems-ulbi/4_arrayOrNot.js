@@ -1,7 +1,7 @@
-const obj1={
+const obj1 = {
   name: "Nurbek",
-}
+};
 
-const array = []
+const array = [];
 
-console.log(Array.isArray(obj1))
+console.log(Array.isArray(obj1));

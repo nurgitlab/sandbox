@@ -5,7 +5,7 @@ function sum(a) {
   let f = (b) => {
     currentSum += b;
     return f;
-  }
+  };
 
   f.toString = () => {
     return currentSum;
@@ -15,4 +15,4 @@ function sum(a) {
 }
 
 
-console.log( sum(1)(2)(3));
+console.log(sum(1)(2)(3));
