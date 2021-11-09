@@ -6,7 +6,7 @@ document.onmousemove = () => {
       '<img ' +
       'src="https://alterozoom.com/assets/unn_logo.png" ' +
       'id="nnsuLogo"' +
-      'width="80px"'+
+      'width="80px"' +
       '>' +
       '</div>',
     );

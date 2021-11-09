@@ -1,9 +1,9 @@
-.header{
+.header {
     font-size: 36px;
     text-align: center;
 }
 
-.mainInfo{
+.mainInfo {
     width: 50%;
     margin: 50px 25% 50px 25%;
     font-size: 24px;
@@ -22,7 +22,7 @@
     border-radius: 20px;
 }
 
-body{
+body {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     background-image: url("https://interyerus.ru/f/product/pre_LS7006.jpg");
 }
