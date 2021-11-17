@@ -16,5 +16,5 @@ function Cat(color, name) {
 // const cat = myNew(Cat, "black", "Barsik");
 // console.log(cat);
 
-const cat = new Cat()
-console.log(cat)
+const cat = new Cat();
+console.log(cat);

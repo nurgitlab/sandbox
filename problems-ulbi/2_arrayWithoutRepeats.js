@@ -47,7 +47,7 @@ function withoutRepeats(inputArray) {
         prevItem = item;
       }
     }
-  })
+  });
 
   if (flag == 0) {
     answer.push(inputArray[inputArray.length - 1]);
